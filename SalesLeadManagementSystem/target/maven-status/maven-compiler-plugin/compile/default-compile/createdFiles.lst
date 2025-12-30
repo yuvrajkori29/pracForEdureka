@@ -1,0 +1,6 @@
+com/saleslead/entity/Lead.class
+com/saleslead/entity/Salesperson.class
+com/saleslead/dao/SalespersonDAO.class
+com/saleslead/dao/LeadDAO.class
+com/saleslead/MainApp.class
+com/saleslead/entity/Status.class
