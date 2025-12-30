@@ -1,0 +1,10 @@
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/SmartEventManagementApplication.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/entity/Attendee.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/entity/Event.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/entity/Registration.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/repository/AttendeeRepository.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/repository/EventRepository.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/repository/RegistrationRepository.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/service/AttendeeService.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/service/EventService.java
+/home/labuser/Downloads/SmartEventManagement/src/main/java/com/example/SmartEventManagement/service/RegistrationService.java
