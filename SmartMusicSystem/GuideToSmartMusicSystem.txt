@@ -1,0 +1,71 @@
+//json texts for SmartMusicSystem 
+  <---------------------------------------  guide to test application -----------------  >
+///must have requirements 
+swagger implemented 
+all post  and get req implented
+internal tomcat implemented
+postman api testing implemented
+
+
+user
+{
+  "username": "amit_vibes",
+  "email": "amit.kumar@example.com"
+}
+
+Api endpoint : http://localhost:1234/users   : POST
+
+Api endpoint : http
+
+songs   
+
+{
+  "title": "O Maahi",
+  "artist": "Arijit Singh, Pritam",
+  "duration": 233
+}
+
+{
+  "title": "Tauba Tauba",
+  "artist": "Karan Aujla",
+  "duration": 207
+}
+
+{
+  "title": "Akhiyaan Gulaab",
+  "artist": "Mitraz",
+  "duration": 171
+}
+
+Api endpoint : http://localhost:1234/songs     : POST
+
+
+
+playlist
+{
+  "user": {
+    "userId": 1
+  },
+  "songs": [
+    { "songId": 1 },
+    { "songId": 2 },
+    { "songId": 3 }
+  ]
+}
+
+
+
+Api endpoint : http://localhost:1234/songs     : POST
+Api endpoint : http://localhost:1234/playlists/1 : GET 
+
+
+SQl Queries
+#sql queries for smart music system
+
+create database MusicSystem;
+use MusicSystem;
+
+select * from playlist_tbl;
+select * from song_tbl;
+select * from user_tbl;
+

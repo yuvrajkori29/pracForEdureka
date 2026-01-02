@@ -1,6 +1,6 @@
 package com.example.SmartMusicSystem.controller;
 
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,11 +36,10 @@ public class UserController{
 	
 	
 	//getUser by id
-	@GetMapping({"/{id}"})
-	public Optional<User> getUser(@PathVariable Long userId)
-	{
-		return userService.getUser(userId);
-	}
+	@GetMapping("/{userId}")
+    public User getUser(@PathVariable Long userId) {
+        return userService.getUser(userId);
+    }
 	
 	
 }

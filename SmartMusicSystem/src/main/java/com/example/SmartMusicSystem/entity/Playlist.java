@@ -1,20 +1,12 @@
 package com.example.SmartMusicSystem.entity;
 
 import java.util.List;
-
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "playlist_tbl")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Playlist {
 
     @Id
@@ -33,40 +25,12 @@ public class Playlist {
     )
     private List<Song> songs;
 
-	public Playlist(Long playlistId, User user, List<Song> songs) {
-		super();
-		this.playlistId = playlistId;
-		this.user = user;
-		this.songs = songs;
-	}
+    public Playlist() {}
 
-	public Playlist() {
-		super();
-	}
-
-	public Long getPlaylistId() {
-		return playlistId;
-	}
-
-	public void setPlaylistId(Long playlistId) {
-		this.playlistId = playlistId;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-	public List<Song> getSongs() {
-		return songs;
-	}
-
-	public void setSongs(List<Song> songs) {
-		this.songs = songs;
-	}
-
-    
+    public Long getPlaylistId() { return playlistId; }
+    public void setPlaylistId(Long playlistId) { this.playlistId = playlistId; }
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user; }
+    public List<Song> getSongs() { return songs; }
+    public void setSongs(List<Song> songs) { this.songs = songs; }
 }

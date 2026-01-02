@@ -6,29 +6,20 @@ import org.springframework.stereotype.Service;
 import com.example.SmartMusicSystem.entity.Song;
 import com.example.SmartMusicSystem.repository.SongRepository;
 
-import jakarta.transaction.Transactional;
 
 @Service
 public class SongService {
 
     @Autowired
-    private final SongRepository songRepository;
-    
+    private SongRepository repo;
 
-    public SongService(SongRepository repo) {
-		super();
-		this.songRepository = repo;
-	}
-    
-    //method to add Song
-    @Transactional
-	public Song addSong(Song song) {
-        return songRepository.save(song);
+    public Song addSong(Song song) {
+        return repo.save(song);
     }
-  
-	//method to get song
-    @Transactional
+
     public Song getSong(Long id) {
-        return songRepository.findById(id).orElse(null);
+        // Using orElseThrow helps you see exactly what's wrong in the logs
+        return repo.findById(id).orElseThrow(() -> 
+            new RuntimeException("Song not found with id: " + id));
     }
 }

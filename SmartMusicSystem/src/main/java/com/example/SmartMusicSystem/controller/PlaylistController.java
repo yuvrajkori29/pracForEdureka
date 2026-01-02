@@ -1,12 +1,6 @@
 package com.example.SmartMusicSystem.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.SmartMusicSystem.entity.Playlist;
 import com.example.SmartMusicSystem.service.PlaylistService;
 
@@ -14,29 +8,27 @@ import com.example.SmartMusicSystem.service.PlaylistService;
 @RequestMapping("/playlists")
 public class PlaylistController {
 
-    @Autowired
     private final PlaylistService playlistService;
-    
-    
 
     public PlaylistController(PlaylistService playlistService) {
-		super();
-		this.playlistService = playlistService;
-	}
+        this.playlistService = playlistService;
+    }
 
-	@PostMapping
+    // POST http://localhost:1234/playlists
+    @PostMapping
     public Playlist createPlaylist(@RequestBody Playlist playlist) {
         return playlistService.createPlaylist(playlist);
     }
 
-    @PutMapping("/{id}/addSong/{songId}")
-    public Playlist addSongToPlaylist(@PathVariable Long id,
-                                       @PathVariable Long songId) {
-        return playlistService.addSongToPlaylist(id, songId);
+    // PUT http://localhost:1234/playlists/1/addSong/2
+    @PutMapping("/{playlistId}/addSong/{songId}")
+    public Playlist addSongToPlaylist(@PathVariable Long playlistId, @PathVariable Long songId) {
+        return playlistService.addSongToPlaylist(playlistId, songId);
     }
 
-    @GetMapping("/{id}")
-    public Playlist getPlaylist(@PathVariable Long id) {
-        return playlistService.getPlaylist(id);
+    // GET http://localhost:1234/playlists/1
+    @GetMapping("/{playlistId}")
+    public Playlist getPlaylist(@PathVariable Long playlistId) {
+        return playlistService.getPlaylist(playlistId);
     }
 }

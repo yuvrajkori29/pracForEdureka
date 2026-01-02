@@ -2,6 +2,7 @@ package com.example.SmartMusicSystem.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,20 +13,17 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "song_tbl")
-public class Song{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long songId;
-	
-	private String title;
-	
-	private Long duration;
-	
-	private String artist;
-	
-	@ManyToMany(mappedBy = "songs")
-	private List<Playlist> listOfPlaylists;
+public class Song {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long songId;
+    private String title;
+    private Long duration;
+    private String artist;
 
+    @ManyToMany(mappedBy = "songs")
+    @JsonIgnore // CRITICAL: Prevents Song -> Playlist -> Song loop
+    private List<Playlist> listOfPlaylists;
 
 	public Song() {
 		super();

@@ -24,9 +24,9 @@ public class UserService{
 	
 	//method to get user
 	@Transactional
-	public Optional<User> getUser(Long userId)
+	public User getUser(Long userId)
 	{
-		Optional<User> userOptional  = userRepository.findById(userId);
+		User userOptional  = userRepository.findById(userId).orElse(null);
 		return userOptional;
 	}
 	
