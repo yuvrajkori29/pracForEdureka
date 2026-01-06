@@ -1,0 +1,26 @@
+package com.example.jwtAuthentication.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+@Configuration
+public class ApplicationConfig {
+
+	@Bean
+	public UserDetailsService userDetailsService() {
+		return new UserDetailsService() {
+
+			@Override
+			public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+		};
+	}
+}
