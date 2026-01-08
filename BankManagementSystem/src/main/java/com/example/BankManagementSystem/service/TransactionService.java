@@ -29,8 +29,14 @@ public TransactionService(TransactionRepository transactionRepository,AccountRep
 
 //important
 
-public Transaction recordTransaction(Long accountId, double amount, String type) {
-    Account acc = accountRepository.findById(accountId).orElseThrow();
+public Transaction recordTransaction(Transaction transaction) {
+	
+	
+	Long accountId = transaction.getAccount().getId();
+	double amount = transaction.getAccount().getBalance();
+	String type = transaction.getType();
+	
+	Account acc = accountRepository.findById(accountId).orElseThrow();
 
     if ("DEBIT".equalsIgnoreCase(type))
         acc.setBalance(acc.getBalance() - amount);

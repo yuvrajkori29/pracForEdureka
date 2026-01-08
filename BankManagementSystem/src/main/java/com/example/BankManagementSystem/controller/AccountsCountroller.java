@@ -1,5 +1,7 @@
 package com.example.BankManagementSystem.controller;
 
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,6 +27,7 @@ public class AccountsCountroller {
 	@PostMapping
 	public Account createAccount(@RequestBody Account account)
 	{
+		
 		return accountService.createAccount(account);
 	}
 	 
@@ -33,5 +36,11 @@ public class AccountsCountroller {
     {
     	return accountService.getAccountDetails(id);
     }
+    
+    @GetMapping("/customers/{id}")
+	public  List<Account> getAccountById(@PathVariable Long id)
+	{
+    	return accountService.getAccountsById(id);
+	}
     
 }

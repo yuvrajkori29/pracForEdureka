@@ -15,13 +15,13 @@ public class CacheTest {
 
     @Test
     void testCachePerformance() {
-        // 1. First call - This will go to the DB
+     
         long start1 = System.currentTimeMillis();
         Customer c1 = customerService.getCustomer(1L);
         long end1 = System.currentTimeMillis();
         long time1 = end1 - start1;
 
-        // 2. Second call - This should come from CACHE (super fast)
+ 
         long start2 = System.currentTimeMillis();
         Customer c2 = customerService.getCustomer(1L);
         long end2 = System.currentTimeMillis();

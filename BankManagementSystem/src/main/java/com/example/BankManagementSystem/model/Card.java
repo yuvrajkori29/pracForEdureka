@@ -1,5 +1,8 @@
 package com.example.BankManagementSystem.model;
 
+
+
+
 import jakarta.persistence.*;
 
 @Entity
@@ -13,9 +16,20 @@ public class Card {
     private String expiryDate;
 
     @ManyToOne
-    @JoinColumn(name = "account_id")
     private Account account;
+    public Card(Long id, String cardNumber, String cardType, String expiryDate, Account account) {
+		super();
+		this.id = id;
+		this.cardNumber = cardNumber;
+		this.cardType = cardType;
+		this.expiryDate = expiryDate;
+		this.account = account;
+	}
 
+	public Card() {
+		super();
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -56,18 +70,7 @@ public class Card {
 		this.account = account;
 	}
 
-	public Card(Long id, String cardNumber, String cardType, String expiryDate, Account account) {
-		super();
-		this.id = id;
-		this.cardNumber = cardNumber;
-		this.cardType = cardType;
-		this.expiryDate = expiryDate;
-		this.account = account;
-	}
-
-	public Card() {
-		super();
-	}
+	
     
     
 }

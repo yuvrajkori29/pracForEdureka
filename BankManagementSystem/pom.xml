@@ -4,7 +4,9 @@
     <groupId>com.example</groupId>
     <artifactId>bank</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging> <parent>
+    <packaging>war</packaging> 
+
+    <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.2.0</version>
@@ -21,6 +23,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.boot</groupId>        
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
@@ -34,6 +42,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
+        
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

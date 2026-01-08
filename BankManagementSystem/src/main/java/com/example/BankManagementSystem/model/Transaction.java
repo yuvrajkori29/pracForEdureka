@@ -5,6 +5,9 @@ package com.example.BankManagementSystem.model;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Transaction {
 
@@ -16,8 +19,8 @@ public class Transaction {
     private String type;
     private LocalDateTime transactionDate;
 
+   
     @ManyToOne
-    @JoinColumn(name = "account_id")
     private Account account;
     
     

@@ -1,6 +1,5 @@
 package com.example.BankManagementSystem.service;
 
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -22,14 +21,16 @@ public class CardService {
     
     //method calls
 	
-	public Card issueCard(Long accountId, Card card) {
+	public Card issueCard(Card card) {
+		Long accountId  = card.getAccount().getId();
         Account account = accountRepository.findById(accountId).orElseThrow();
         card.setAccount(account);
+        
         return cardRepository.save(card);
     }
 	
-	public Optional<Card> getCardDetails(Long id)
+	public Card getCardDetails(Long id)
 	{
-		return cardRepository.findById(id);
+		return cardRepository.findById(id).orElse(null);
 	}
 }
